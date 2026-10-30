@@ -1,0 +1,96 @@
+name: ForgeFlow feature or change
+description: New behaviour or a change for ForgeFlow agents to pick up. Grey text in each box is an example; replace it with your own.
+title: "[Feature]: "
+labels: ["forgeflow", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ForgeFlow checks this issue against the **Definition of Ready** before any work starts.
+        Every box shows a worked example (a basic calculator) in grey. It is only a hint and is **not** submitted.
+        Write "none" where a box does not apply. Vague words such as *fast*, *easy* or *user-friendly* need a number or a test.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences a teammate could read in ten seconds.
+      placeholder: Add a calculator page to the web app that performs basic arithmetic on two numbers.
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: The business outcome. Why does this matter, and for whom?
+      placeholder: Let support staff do quick sums inside the app instead of switching to a phone calculator.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What is wrong or missing today, and who is affected?
+      placeholder: Support staff copy figures into an external calculator, which is slow and causes typing mistakes in refunds.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included. Name the operations, screens, APIs or files.
+      placeholder: |
+        - Add, subtract, multiply and divide two decimal numbers
+        - A Calculator page at /tools/calculator
+        - A Go package `calc` with unit tests
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of Scope
+      description: What is explicitly excluded, or "none".
+      placeholder: |
+        - Scientific functions (sin, log, powers)
+        - Calculation history
+        - Keyboard shortcuts
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What a user sees after the change.
+      placeholder: The user enters two numbers, picks an operation and sees the result rounded to 2 decimal places. Dividing by zero shows "Cannot divide by zero" and no result.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: One testable bullet per line, starting with "- ". "Given … when … then …" works well.
+      placeholder: |
+        - Given 7 and 5, when I choose Add, then the result is 12
+        - Given 7 and 5, when I choose Subtract, then the result is 2
+        - Given 2.5 and 4, when I choose Multiply, then the result is 10.00
+        - Given 10 and 0, when I choose Divide, then "Cannot divide by zero" is shown
+        - Given an empty or non-numeric input, then the Calculate button is disabled
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Other issues, teams, services or releases this needs, or "none".
+      placeholder: none
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Technical Constraints
+      description: Languages, libraries, performance limits or architecture rules, or "none".
+      placeholder: Go standard library only; calculation must not call any external service; result in under 100 ms.
+  - type: textarea
+    id: security
+    attributes:
+      label: Security / Compliance
+      description: Data handled, permissions, audit or regulatory needs. Write "none" if there are none.
+      placeholder: none (no personal data is stored or sent)
+    validations:
+      required: true

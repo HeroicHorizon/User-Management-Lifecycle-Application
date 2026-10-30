@@ -1,0 +1,99 @@
+name: ForgeFlow bug
+description: Something is broken. Grey text in each box is an example; replace it with your own.
+title: "[Bug]: "
+labels: ["forgeflow", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ForgeFlow checks this issue against the **Definition of Ready** before any work starts.
+        Every box shows a worked example in grey. It is only a hint and is **not** submitted.
+        Write "none" where a box does not apply.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One or two sentences describing the defect.
+      placeholder: The calculator returns a wrong result when dividing negative numbers.
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: The outcome once this is fixed.
+      placeholder: Refund amounts calculated in the app are always correct.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Who is affected and how badly?
+      placeholder: Support staff issuing partial refunds get positive amounts where negative ones are expected, about 20 times a week.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Numbered steps someone else can follow.
+      placeholder: |
+        1. Open /tools/calculator
+        2. Enter -10 and 4
+        3. Choose Divide and press Calculate
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What happens today. Paste the exact message if there is one.
+      placeholder: The result shows 2.50
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead.
+      placeholder: The result shows -2.50
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: One testable bullet per line, starting with "- ".
+      placeholder: |
+        - Given -10 and 4, when I choose Divide, then the result is -2.50
+        - Given 10 and -4, when I choose Divide, then the result is -2.50
+        - Given -10 and -4, when I choose Divide, then the result is 2.50
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Or "none".
+      placeholder: none
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Technical Constraints
+      description: Or "none".
+      placeholder: Fix must keep the existing `calc.Divide` function signature.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Version, browser or OS where you saw it.
+      placeholder: v1.4.2, Chrome 130 on Windows 11
+  - type: textarea
+    id: security
+    attributes:
+      label: Security / Compliance
+      description: Write "none" if there are none.
+      placeholder: none
+    validations:
+      required: true
